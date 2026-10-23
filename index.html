@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editable Heading</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      align-items: center;      /* vertical center */
+      justify-content: center;  /* horizontal center */
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      outline: none;
+      padding: 10px 20px;
+      border-bottom: 2px dashed transparent;
+    }
+    h1:focus {
+      border-bottom-color: #999;
+    }
+  </style>
+</head>
+<body>
+  <h1 contenteditable="true">Click here to edit this text</h1>
+</body>
+</html>
