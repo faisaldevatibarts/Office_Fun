@@ -26,6 +26,50 @@
   </style>
 </head>
 <body>
-  <h1 contenteditable="true">Type your status here...</h1>
+
+  <h1 id="title">Shake your mouse</h1>
+
+  <script>
+    const title = document.getElementById('title');
+    const texts = ['Tea Break', 'Lunch', 'Meeting', 'Others'];
+    let index = 0;
+
+    let lastX = null;
+    let lastDir = 0;
+    let reversals = [];
+    let cooldownUntil = 0;
+
+    const MIN_MOVE = 5;       // minimum px movement to count
+    const WINDOW_MS = 600;    // time window for shake
+    const MIN_REVERSALS = 4;  // direction changes needed
+    const COOLDOWN_MS = 800;  // gap between two text changes
+
+    document.addEventListener('mousemove', (e) => {
+      const now = Date.now();
+      if (now < cooldownUntil) { lastX = e.clientX; return; }
+      if (lastX === null) { lastX = e.clientX; return; }
+
+      const dx = e.clientX - lastX;
+      if (Math.abs(dx) < MIN_MOVE) return;
+
+      const dir = dx > 0 ? 1 : -1;
+      if (lastDir !== 0 && dir !== lastDir) {
+        reversals.push(now);
+      }
+      lastDir = dir;
+      lastX = e.clientX;
+
+      reversals = reversals.filter(t => now - t < WINDOW_MS);
+
+      if (reversals.length >= MIN_REVERSALS) {
+        title.textContent = texts[index];
+        index = (index + 1) % texts.length;   // next time next text, loops back after "Others"
+
+        reversals = [];
+        lastDir = 0;
+        cooldownUntil = now + COOLDOWN_MS;
+      }
+    });
+  </script>
 </body>
 </html>
