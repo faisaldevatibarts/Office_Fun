@@ -1,0 +1,19 @@
+
+{
+  "manifest_version": 3,
+  "name": "Faisal Inspect Tool",
+  "version": "1.0.0",
+  "description": "Inspect website layout, dimensions, spacing, images and CSS.",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_title": "Layout Inspector",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

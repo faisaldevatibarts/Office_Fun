@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Layout Inspector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Faisal Inspect Tool</h2>
+    <p>Inspect website layout and CSS properties.</p>
+
+    <button id="toggle">Enable Inspector</button>
+
+
+    <div class="inspection-options">
+    <h3>Inspection Options</h3>
+
+    <label>
+        <input type="checkbox" id="viewAllSpacing">
+        View All Spacing
+    </label>
+
+    <label>
+        <input type="checkbox" id="showDimensions">
+        Dimensions
+    </label>
+
+    <label>
+        <input type="checkbox" id="showTypography">
+        Typography
+    </label>
+
+    <label>
+        <input type="checkbox" id="showLayout">
+        Layout
+    </label>
+    </div>
+
+
+    <div id="status">Inspector is currently OFF</div>
+
+    <div class="instructions">
+      <p>Hover: Inspect element</p>
+      <p>Click: Lock element details</p>
+      <p>ESC: Unlock selection</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
