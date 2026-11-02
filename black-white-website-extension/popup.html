@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Black & White Mode</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="panel">
+    <div class="heading">
+      <div class="mark" aria-hidden="true">B/W</div>
+      <div>
+        <h1>Black &amp; White</h1>
+        <p class="subtitle">Created By: Faisal Nawaz</p>
+      </div>
+    </div>
+
+    <div class="preview" aria-hidden="true">
+      <div class="preview-bar"></div>
+      <div class="preview-layout">
+        <div class="preview-picture"></div>
+        <div class="preview-lines"><i></i><i></i><i></i></div>
+      </div>
+      <div class="preview-lines bottom"><i></i><i></i></div>
+    </div>
+
+    <p class="description">Hide images, remove colors, and stop most animations across your tabs.</p>
+    <button id="toggle" type="button" aria-pressed="false">Enable on all tabs</button>
+    <p id="status" class="status" role="status">Mode is off on all tabs</p>
+    <p class="note">Saved on this device. Some site layouts may change while images are hidden.</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

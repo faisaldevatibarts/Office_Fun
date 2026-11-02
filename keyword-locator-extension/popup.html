@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keyword Locator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="wrap">
+    <h4>Faisal Nawaz</h4>
+    <div class="search">
+      <input id="q" type="text" placeholder="Type a keyword (separate several with commas)…" autocomplete="off" spellcheck="false" autofocus>
+      <button id="clear" class="icon-btn" title="Clear highlights" aria-label="Clear">✕</button>
+    </div>
+
+    <div class="group-head">
+      <span>Preset keywords</span>
+      <span class="group-actions">
+        <button id="preset-all" class="link" type="button">Select all</button>
+        <button id="preset-none" class="link" type="button">None</button>
+      </span>
+    </div>
+    <div id="presets" class="presets"></div>
+
+    <div class="opts">
+      <label><input type="checkbox" id="cs"> Case sensitive</label>
+      <label><input type="checkbox" id="ww"> Whole word</label>
+      <label><input type="checkbox" id="ol" checked> Section outline</label>
+    </div>
+
+    <div class="scanbox">
+      <label class="scan-main"><input type="checkbox" id="scanall"> <span>Check all pages of this site</span></label>
+      <label class="scan-sub"><input type="checkbox" id="attrs"> Also search URLs and attributes (href, src, alt…)</label>
+    </div>
+
+    <div id="tabs" class="tabs" role="tablist" hidden>
+      <button id="tab-page" class="tab" role="tab" aria-selected="true" type="button">This page</button>
+      <button id="tab-all" class="tab" role="tab" aria-selected="false" type="button">All pages</button>
+    </div>
+
+    <p id="msg" class="msg" role="status"></p>
+
+    <section id="panel-page">
+      <div class="nav">
+        <button id="prev" class="btn" type="button">▲ Previous</button>
+        <span id="count" class="count">—</span>
+        <button id="next" class="btn" type="button">Next ▼</button>
+      </div>
+      <div id="kwcounts" class="kwcounts"></div>
+      <h2 id="sec-title" class="sec-title" hidden>Matches per section</h2>
+      <ul id="sections" class="sections"></ul>
+    </section>
+
+    <section id="panel-all" hidden>
+      <div id="scanstat" class="scanstat">
+        <div class="progress"><i id="fill"></i></div>
+        <div class="scanline">
+          <span id="scantext"></span>
+          <span>
+            <button id="scan-stop" class="link" type="button" hidden>Stop</button>
+            <button id="rescan" class="link" type="button" hidden>Rescan</button>
+          </span>
+        </div>
+        <p id="scannotes" class="scannotes"></p>
+      </div>
+      <div id="results">
+        <div id="summary" class="kwcounts"></div>
+        <ul id="pages" class="pages"></ul>
+        <div class="results-foot">
+          <span class="hint">Click a page to open it in a new tab, then reopen this popup there to highlight the matches.</span>
+          <button id="csv" class="btn small" type="button">Download CSV</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

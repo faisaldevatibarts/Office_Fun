@@ -1,0 +1,43 @@
+/* Keyword highlight */
+span.kwh-mark {
+  background: #ffe14d !important;
+  color: #000 !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .25) !important;
+}
+span.kwh-mark.kwh-hidden {
+  background: transparent !important;
+  color: inherit !important;
+  box-shadow: none !important;
+}
+span.kwh-mark.kwh-current {
+  background: #ff7a00 !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 2px #b34700, 0 0 10px 2px rgba(255, 122, 0, .85) !important;
+}
+
+/* Section outline (sections that contain a match) */
+.kwh-box {
+  outline: 2px dashed rgba(37, 99, 235, .7) !important;
+  outline-offset: -2px !important;
+}
+
+/* Section flash on jump */
+.kwh-flash {
+  animation: kwh-flash 1.8s ease-out 1;
+}
+@keyframes kwh-flash {
+  0%, 35% {
+    outline: 4px solid #ff3d00;
+    outline-offset: -4px;
+    box-shadow: inset 0 0 0 9999px rgba(255, 214, 0, .28);
+  }
+  100% {
+    outline: 4px solid rgba(255, 61, 0, 0);
+    outline-offset: -4px;
+    box-shadow: inset 0 0 0 9999px rgba(255, 214, 0, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kwh-flash { animation-duration: .01s; }
+}

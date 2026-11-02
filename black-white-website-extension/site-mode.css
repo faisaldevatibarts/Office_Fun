@@ -1,0 +1,35 @@
+/* Applied only to the current tab when the user enables the mode. */
+html.bw-extension-mode {
+  filter: grayscale(1) !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+html.bw-extension-mode *,
+html.bw-extension-mode *::before,
+html.bw-extension-mode *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+  caret-color: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html.bw-extension-mode img,
+html.bw-extension-mode picture,
+html.bw-extension-mode video,
+html.bw-extension-mode canvas,
+html.bw-extension-mode svg image,
+html.bw-extension-mode [role="img"],
+html.bw-extension-mode iframe {
+  visibility: hidden !important;
+}
+html.bw-extension-mode img *,
+html.bw-extension-mode picture *,
+html.bw-extension-mode video *,
+html.bw-extension-mode canvas *,
+html.bw-extension-mode [role="img"] * {
+  visibility: hidden !important;
+}
+html.bw-extension-mode {
+  color-scheme: light !important;
+}

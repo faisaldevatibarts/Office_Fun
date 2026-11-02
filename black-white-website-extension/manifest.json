@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Black & White Website Mode",
+  "version": "1.0.0",
+  "description": "Simplifies websites into a black-and-white, low-distraction view by hiding images and disabling animations.",
+  "permissions": ["scripting", "storage", "tabs"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Toggle Black & White Website Mode",
+    "default_popup": "popup.html"
+  }
+}
